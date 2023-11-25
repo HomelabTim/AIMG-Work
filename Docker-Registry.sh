@@ -34,6 +34,10 @@ sudo docker pull (server ip address):5000/(your-image)
 
 sudo docker run -d --name (your_container_name) (server ip address):5000/(your-image)
 
+#code to remove all containers 
+
+docker rm -f $(docker ps -aq)
+
 #script for github actions name it docker-build.yml
 
 name: Docker Build and Push
