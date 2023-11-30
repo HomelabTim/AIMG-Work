@@ -1,0 +1,9 @@
+version: '3'
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.5
+    container_name: meilisearch
+    ports:
+      - "7700:7700"
+    volumes:
+      - /portainer/Files/AppData/Config/meili_data:/meili_data

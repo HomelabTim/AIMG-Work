@@ -3,9 +3,9 @@ version: '3'
 services:
   redis:
     image: "redis:latest"
-    container_name: "my-redis-container"
+    container_name: "aimg-redis"
     ports:
-      - "6379:6379"
+      - "16681:6379"
     volumes:
-      - "./data:/data"
+      - "/portainer/Files/AppData/Config/redis:/data"
     command: ["redis-server", "--appendonly", "yes"]
