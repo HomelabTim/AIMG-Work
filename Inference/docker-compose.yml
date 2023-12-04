@@ -1,0 +1,12 @@
+version: '3'
+services:
+  inference:
+    image: ghcr.io/aimg1/inference:gh-actions
+    container_name: inference
+    environment:
+      - MODEL=lmsys/vicuna-7b-v1.5
+    runtime: nvidia
+    command: bash
+    stdin_open: true
+    tty: true
+    remove: true
