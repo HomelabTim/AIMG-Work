@@ -19,6 +19,11 @@ $ apt install ansible -y
 
 --------creating inventory---------------
 
+
+mkdir /ansible
+nano /ansible/inventory
+ansible -i /ansible/inventory (name) -m ping
+
 /etc/ansible/ansible.cfg: Ansible configuration file.
 /etc/ansible/hosts: Default inventory file.
 
