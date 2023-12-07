@@ -1,0 +1,47 @@
+---
+- name: Configure Server and Deploy Docker
+  hosts: your_server
+  become: true
+  tasks:
+    - name: Update and upgrade the server
+      apt:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Install Docker.io and Docker Compose
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - docker.io
+        - docker-compose
+
+    - name: Log in to ghcr.io for Docker
+      command: "docker login ghcr.io -u homelabtim -p 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"
+
+    - name: Create the /inference directory
+      file:
+        path: /inference
+        state: directory
+
+    - name: Create docker-compose.yml file
+      copy:
+        content: |
+          version: '3'
+          services:
+            inference:
+              image: ghcr.io/aimg1/inference:gh-actions
+              container_name: inference
+              environment:
+                - MODEL=lmsys/vicuna-7b-v1.5
+              runtime: nvidia
+              command: bash
+              stdin_open: true
+              tty: true
+              remove: true
+        dest: /inference/docker-compose.yml
+
+    - name: Run docker-compose up
+      command: "docker-compose up -d"
+      args:
+        chdir: /inference
