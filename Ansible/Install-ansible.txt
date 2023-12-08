@@ -12,10 +12,11 @@ apt update && apt upgrade && apt install ansible -y
 
 ---------install on Ubuntu---------------
 
-$ apt update -y
-$ apt install software-properties-common -y
-$ add-apt-repository --yes --update ppa:ansible/ansible
-$ apt install ansible -y
+apt remove ansible -y
+apt update -y
+apt install software-properties-common -y
+add-apt-repository --yes --update ppa:ansible/ansible
+apt install ansible -y
 
 --------creating inventory---------------
 

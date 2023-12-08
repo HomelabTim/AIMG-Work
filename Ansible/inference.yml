@@ -1,6 +1,6 @@
 ---
 - name: Configure Server and Deploy Docker
-  hosts: your_server
+  hosts: servers
   become: true
   tasks:
     - name: Update and upgrade the server
@@ -17,7 +17,7 @@
         - docker-compose
 
     - name: Log in to ghcr.io for Docker
-      command: "docker login ghcr.io -u homelabtim -p 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"
+      command: "" #add command here
 
     - name: Create the /inference directory
       file:
