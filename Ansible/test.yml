@@ -1,5 +1,0 @@
----
-- hosts: servers
-  tasks:
-    - name: Ping Docker Hosts
-      ping:

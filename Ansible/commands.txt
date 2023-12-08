@@ -1,1 +1,15 @@
-ansible-playbook -i inventory.ini test.yml
+--------------ansible notes-----------------------
+
+- go into the .cfg file and add this line: 
+host_key_checking = False
+
+- to ping machines use this command: 
+ansible servers -m ping
+
+- command to use ansible: 
+ansible-playbook inference.yml
+
+- command to reboot: 
+ansible servers -a "reboot"
+
+
