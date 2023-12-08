@@ -1,6 +1,8 @@
 --------------ansible notes-----------------------
 
 - go into the .cfg file and add this line: 
+[defaults]
+
 host_key_checking = False
 
 - to ping machines use this command: 

@@ -17,31 +17,24 @@
         - docker-compose
 
     - name: Log in to ghcr.io for Docker
-      command: "" #add command here
+      command: "" #add command
 
-    - name: Create the /inference directory
+    - name: Create /inference directory
       file:
         path: /inference
         state: directory
+        mode: '0755'
 
-    - name: Create docker-compose.yml file
+    - name: Create Docker Compose file
       copy:
         content: |
           version: '3'
           services:
             inference:
-              image: ghcr.io/aimg1/inference:gh-actions
-              container_name: inference
+              image: ghcr.io/aimg1/inference:sha-5df8cd7
+              runtime: nvidia
               environment:
                 - MODEL=lmsys/vicuna-7b-v1.5
-              runtime: nvidia
-              command: bash
-              stdin_open: true
-              tty: true
-              remove: true
+                - NATS_URLS=nats://0.0.0.0:4222
+              command: bash run.sh
         dest: /inference/docker-compose.yml
-
-    - name: Run docker-compose up
-      command: "docker-compose up -d"
-      args:
-        chdir: /inference
