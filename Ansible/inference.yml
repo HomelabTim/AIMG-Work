@@ -38,3 +38,5 @@
                 - NATS_URLS=nats://0.0.0.0:4222
               command: bash run.sh
         dest: /inference/docker-compose.yml
+
+        

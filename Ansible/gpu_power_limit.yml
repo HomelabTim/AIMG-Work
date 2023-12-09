@@ -1,0 +1,31 @@
+---
+- name: Set GPU Power Limit
+  hosts: limit_servers
+  become: yes  # Run tasks with sudo
+
+  tasks:
+    - name: Create GPU power limit script
+      copy:
+        content: |
+          #!/bin/bash
+
+          while true; do
+              # Check if the NVIDIA System Management Interface (nvidia-smi) command is available
+              if command -v nvidia-smi &> /dev/null; then
+                  # Set the power limit for GPU 0 to 300W
+                  nvidia-smi -i 0 -pl 300
+                  echo "GPU power limit set to 300W"
+              else
+                  echo "NVIDIA System Management Interface (nvidia-smi) not found. Make sure NVIDIA GPU drivers are installed."
+              fi
+
+              sleep 1  # Sleep for one second before the next iteration
+          done
+        dest: /gpu_power_limit.sh
+        mode: 0755  # Ensure executable permissions
+
+    - name: Add cron job to run script every minute
+      cron:
+        name: "set_gpu_power_limit"
+        job: "* * * * * /gpu_power_limit.sh"
+        user: root
