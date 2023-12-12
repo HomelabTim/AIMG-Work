@@ -14,11 +14,11 @@ The repository houses a diverse set of projects, ranging from infrastructure man
 
 ### 2. Infrastructure Management
 
-A significant portion of this repository is dedicated to infrastructure management code. Leveraging Infrastructure as Code (IaC) principles, I use tools like Terraform, Ansible, and others to define and manage scalable and version-controlled infrastructure components.
+A significant portion of this repository is dedicated to infrastructure management code. Leveraging Infrastructure as Code (IaC) principles, I use tools like Docker, Ansible, and others to define and manage scalable and version-controlled infrastructure components.
 
 ### 3. Documentation
 
-Thorough documentation accompanies each project, providing insights into the architecture, deployment procedures, and any associated best practices. The `docs` folder contains detailed information to aid understanding and usage.
+Thorough documentation accompanies each project, providing insights into the architecture, deployment procedures, and any associated best practices.
 
 ### 4. Flexibility
 
