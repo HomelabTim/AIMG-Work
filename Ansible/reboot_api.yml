@@ -1,0 +1,14 @@
+---
+- name: Reboot API Servers
+  hosts: api_servers
+  become: yes  # Run tasks with elevated privileges (sudo)
+
+  tasks:
+    - name: Wait 5 seconds before moving to the next host
+      pause:
+        seconds: 10
+
+    - name: Reboot host
+      command: "sudo reboot"
+      async: 0
+      poll: 0
