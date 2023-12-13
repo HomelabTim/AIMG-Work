@@ -1,0 +1,16 @@
+---
+- name: Configure SSH settings and reboot server
+  hosts: your_target_server
+  become: yes
+
+  tasks:
+    - name: Edit sshd_config file
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '#PermitRootLogin prohibit-password'
+        line: 'PermitRootLogin yes'
+      notify: Reboot Server
+    
+    - name: Reboot host
+      command: "sudo reboot"
+  

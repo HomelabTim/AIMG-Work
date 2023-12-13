@@ -4,11 +4,11 @@
   become: yes  # Run tasks with elevated privileges (sudo)
 
   tasks:
-    - name: Wait 5 seconds before moving to the next host
-      pause:
-        seconds: 10
-
     - name: Reboot host
       command: "sudo reboot"
-      async: 0
-      poll: 0
+
+    - name: Wait for 30 seconds before proceeding to the next server
+      wait_for:
+        timeout: 30
+      delegate_to: localhost
+      when: inventory_hostname != ansible_play_hosts_all[-1]
