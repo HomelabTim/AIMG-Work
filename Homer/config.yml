@@ -1,0 +1,207 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/icons for icons options
+
+title: "Employee Dashboard"
+subtitle: "AI Media Group"
+logo: "assets/tools/AIMG-Logo2.png"
+# icon: "fas fa-skull-crossbones" # Optional icon
+
+header: true
+footer: '<p>All items on this page are created and owned by AI Media Group</p>' # set false if you want to hide it.
+
+# Enable searchbar
+search: true
+# Optional: Different hotkey for search, defaults to "/"
+# searchHotkey: "Shift"
+
+# Optional theme customization
+theme: dark
+colors:
+  light:
+    border-radius: 14px
+    highlight-primary: "#000000"
+    highlight-secondary: "#8c52ff"
+    highlight-hover: "#000000"
+    background: "#000000"
+    card-background: "#000000"
+    footer-background: "#000000"
+    text: "#FFFFFF"
+    text-header: "#FFFFFF"
+    text-title: "#FFFFFF"
+    text-subtitle: "#FFFFFF"
+    link: "#FFFFFF"
+    link-hover: "#e1c762"
+    background-image: "url(../assets/img/wall4.jpg)"
+  dark:
+    border-radius: 14px
+    highlight-primary: "#000000"
+    highlight-secondary: "#8c52ff"
+    highlight-hover: "#000000"
+    background: "#000000"
+    card-background: "#000000"
+    footer-background: "#000000"
+    text: "#FFFFFF"
+    text-header: "#FFFFFF"
+    text-title: "#FFFFFF"
+    text-subtitle: "#FFFFFF"
+    link: "#FFFFFF"
+    link-hover: "#e1c762"
+    background-image: "url(../assets/img/wall4.jpg)"
+
+# Optional message
+#message:
+ # style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
+  #title: "Demo !"
+  #icon: "fa fa-grin"
+  #content: "This is a dummy homepage demo."
+
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+#links:
+ # - name: "Contribute"
+  #  icon: "fab fa-github"
+   # url: "https://github.com/GeorgeGedox/HomerGX"
+   # target: "_blank" # optional html a tag target attribute
+ # - name: "My blog"
+  #  icon: "fas fa-book"
+   # url: "https://georgev.design/blog"
+  # this will link to a second homer page that will load config from additionnal-page.yml and keep default config values as in config.yml file
+  # see url field and assets/additionnal-page.yml.dist used in this example:
+ # - name: "another page!"
+  #  icon: "fas fa-file-alt"
+   # url: "#additionnal-page"
+
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Main Servers"
+    icon: "fas fa-server"
+    items:
+      - name: "DC1"
+        logo: "assets/tools/proxmox.png"
+        subtitle: "Proxmox Server"
+        tag: "Server"
+        url: "https://pvedc1-2.aimg.io:8006/"
+      - name: "US1"
+        logo: "assets/tools/proxmox.png"
+        subtitle: "Proxmox Server"
+        tag: "Server"
+        url: "https://pveus1.aimg.io:8006"
+      - name: "Portainer"
+        logo: "assets/tools/portainer.png"
+        subtitle: "Docker Server"
+        tag: "Server"
+        url: "https://portainer.aimg.io"
+  - name: "Sexy.ai"
+    icon: "fas fa-globe"
+    items:
+      - name: "Staging"
+        logo: "assets/tools/logo-gold-dark.webp"
+        subtitle: "Sexy.ai Staging"
+        tag: "Website"
+        url: "https://staging-ui2.sexy.ai/"
+      - name: "Production"
+        logo: "assets/tools/logo-gold-dark.webp"
+        subtitle: "Sexy.ai Production"
+        tag: "Website"
+        url: "https://sexy.ai/"
+  - name: "Free Journey"
+    icon: "fas fa-globe"
+    items:
+      - name: "Staging"
+        logo: "assets/tools/fjlogo.png"
+        subtitle: "Free Journey Staging"
+        tag: "Website"
+        url: "https://staging.freejourney.ai/"
+      - name: "Production"
+        logo: "assets/tools/fjlogo.png"
+        subtitle: "Free Journey Production"
+        tag: "Website"
+        url: "https://freejourney.ai/"
+  - name: "Company Tools"
+    icon: "fas fa-code-branch"
+    items:
+      - name: "HammerTime"
+        logo: "assets/tools/hammertime.svg"
+        subtitle: "Discord Time Tool"
+        tag: "Website"
+        url: "https://hammertime.cyou/"
+      - name: "GitHub"
+        logo: "assets/tools/github2.png"
+        subtitle: "AIMG GitHub Page"
+        tag: "Website"
+        url: "https://github.com/aimg1"
+      - name: "Asana"
+        logo: "assets/tools/asana.png"
+        subtitle: "Task Manager"
+        tag: "Website"
+        url: "https://app.asana.com"
+  - name: "DNS"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Cloudflare"
+        logo: "assets/tools/Cloudflare.png"
+        subtitle: "DNS for AIMG"
+        tag: "Website"
+        url: "https://dash.cloudflare.com/"
+      - name: "Cloudflare Tunnels"
+        logo: "assets/tools/Cloudflare.png"
+        subtitle: "Tunnel for DNS"
+        tag: "Website"
+        url: "https://one.dash.cloudflare.com/466c7ced511d94eb1c87174b592c22e8/access/tunnels?search="
+  - name: "Documentation"
+    icon: "fas fa-folder-open"
+    items:
+      - name: "Infra Sheet"
+        logo: "assets/tools/google.png"
+        subtitle: "Infrastructure Documentation Sheet"
+        tag: "Document"
+        url: "https://docs.google.com/spreadsheets/d/15RR5eUGf4FiZtGedK3TJb_icVik-Zkp4rrIZXzcyAhc/edit#gid=287567109"
+      - name: "Roadmap"
+        logo: "assets/tools/google.png"
+        subtitle: "Roadmap for Meetings"
+        tag: "Document"
+        url: "https://docs.google.com/spreadsheets/d/1Lk9Smqn3FCGU_Ga7gHzy4r9smwwM0EFNxqWgBdA5Pgw/edit#gid=1919182400"
+      - name: "Back-End API Docs"
+        logo: "assets/tools/aimglogo.png"
+        subtitle: "API Documentation"
+        tag: "Website"
+        url: "https://aimg.cycloptux.com/docs/#introduction"
+      - name: "Sexy.ai Models"
+        logo: "assets/tools/logo-gold-dark.webp"
+        subtitle: "Sexy.ai Model Documentation"
+        tag: "Document"
+        url: "https://docs.google.com/spreadsheets/d/1qEGxxJNA8HG74H1gsM-bKG1E57ky8JCqK742tCpQ96U/edit#gid=0"
+  - name: "Monitoring"
+    icon: "fas fa-chart-line"
+    items:
+      - name: "SigNoz"
+        logo: "assets/tools/signoz.svg"
+        subtitle: "SigNoz Monitoring"
+        tag: "Docker"
+        url: "https://signoz.aimg.io"
+      - name: "GPU Monitoring"
+        logo: "assets/tools/monitor.png"
+        subtitle: "Monitoring GPU Machines"
+        tag: "Web Server"
+        url: "https://gpumonit.aimg.io"
+  - name: "Website Design"
+    icon: "fas fa-code"
+    items:
+      - name: "Canva"
+        logo: "assets/tools/canva.png"
+        subtitle: "Canva Designs"
+        tag: "Website"
+        url: "https://www.canva.com/"
+      - name: "Ghost"
+        logo: "assets/tools/ghost2.png"
+        subtitle: "CMS for Webpages"
+        tag: "Docker"
+        url: "#"
+      - name: "Grav"
+        logo: "assets/tools/grav2.png"
+        subtitle: "CMS for Webpages"
+        tag: "Docker"
+        url: "#"
