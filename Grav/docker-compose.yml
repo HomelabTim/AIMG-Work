@@ -11,4 +11,4 @@ services:
       - /portainer/Files/AppData/Config/grav:/config
     ports:
       - 8123:80
-    restart: unless-stopped
+    restart: always
