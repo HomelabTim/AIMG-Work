@@ -14,23 +14,23 @@ comment = RSYNC FILES
 read only = true
 timeout = 300
 ```
-**pid file:** The process id file the daemon uses.
+`pid file:` The process id file the daemon uses.
 
-**lock file:** The daemon lock file.
+`lock file:` The daemon lock file.
 
-**log file:** The location of the log file.
+`log file:` The location of the log file.
 
-**port:** If you do not want the rsync daemon to run on its default port `873` then you may specify a new port here. Make sure this port is open in your firewall. Rsync uses the `TCP` protocol for its transfers.
+`port:` If you do not want the rsync daemon to run on its default port `873` then you may specify a new port here. Make sure this port is open in your firewall. Rsync uses the `TCP` protocol for its transfers.
 
-**[files]:** This is the module name. The name used here is what you’ll be putting in the rsync pull command as the first part of the source `/files/../..`. You can name it what you’d like and can have as many as you’d like.
+`[files]:` This is the module name. The name used here is what you’ll be putting in the rsync pull command as the first part of the source `/files/../..`. You can name it what you’d like and can have as many as you’d like.
 
-**path:** The file path for files associated with this module.
+`path:` The file path for files associated with this module.
 
-**comment:** Descriptive comment for this module.
+`comment:` Descriptive comment for this module.
 
-**read only:** This tells the daemon the directory for this module is read-only. You cannot upload to it. For upload only, use `upload only = true`.
+`read only:` This tells the daemon the directory for this module is read-only. You cannot upload to it. For upload only, use `upload only = true`.
 
-**timeout:** In seconds, the rsync daemon will wait before terminating a dead connection.
+`timeout:` In seconds, the rsync daemon will wait before terminating a dead connection.
 
 # Running Rsync as a Daemon
 
