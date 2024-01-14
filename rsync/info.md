@@ -105,24 +105,29 @@ cd /etc/systemd/system/
 
 ## Add the rsync.service file
 
-
+```bash
 [Unit]
-Description=worker1
+Description=rsync
 #After=network.target
 After=network-online.target
 Requires=network-online.target
 
 [Service]
 Type=simple
-ExecStart=sh -c '/home/user/worker1.sh'
+ExecStart=sh -c '/path/to/rsync.sh'
 #Restart=on-failure
 User=user
 
 [Install]
 WantedBy=multi-user.target
 ```
+
+## Create the rsync.sh
+
+```bash
 #!/bin/bash
 
-cd /home/user/3/ComfyUI/models/checkpoints
+cd /path/to/2nd/rsync/location
 
-rsync -rdtv --size-only --delete rsync://10.2.17.31:873/nfsshare/sd15/models/ /home/user/3/ComfyUI/models/checkpoints
+rsync -rdtv --size-only --delete rsync://IPADDR:RsyncPort/DirectoryName/File /path/to/2nd/rsync/location
+```
