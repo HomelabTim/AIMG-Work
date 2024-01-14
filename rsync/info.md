@@ -37,7 +37,7 @@ timeout = 300
 Now with this basic configuration we can start the daemon by itself by running the below:
 
 ```bash
-rsync --daemon
+rsync --daemon --no-detach
 ```
 You can verify the daemon is running with:
 
@@ -73,3 +73,56 @@ And once you find the file, you can complete the command and pull it in.
 ```bash
 rsync -rdt rsync://IPADDR:RsyncPort/DirectoryName/File /DestinationDirectory/
 ```
+
+# Run RSYNC as a service on first server
+
+Go into the systemd directory: 
+
+```bash
+cd /etc/systemd/system/
+```
+
+## Add the rsync.service file
+
+```bash
+[Unit]
+Description=rsync daemon
+
+[Service]
+ExecStart=rsync --daemon --no-detach
+
+[Install]
+WantedBy=multi-user.target
+```
+
+# Run RSYNC as a service on second server
+
+Go into the systemd directory: 
+
+```bash
+cd /etc/systemd/system/
+```
+
+## Add the rsync.service file
+
+
+[Unit]
+Description=worker1
+#After=network.target
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+Type=simple
+ExecStart=sh -c '/home/user/worker1.sh'
+#Restart=on-failure
+User=user
+
+[Install]
+WantedBy=multi-user.target
+```
+#!/bin/bash
+
+cd /home/user/3/ComfyUI/models/checkpoints
+
+rsync -rdtv --size-only --delete rsync://10.2.17.31:873/nfsshare/sd15/models/ /home/user/3/ComfyUI/models/checkpoints
