@@ -31,11 +31,11 @@ sudo reboot
 
 - Click the green `New self-hosted runner` button
 
-![Step1](gh-actions/img/pic.png)
+![Step1](img/pic.png)
 
 - Click `Linux`
 
-![Step2](gh-actions/img/pic2.png)
+![Step2](img/pic2.png)
 
 - Go to the VM
 
@@ -72,5 +72,5 @@ sudo ./svc.sh install root
 ```bash
 sudo ./svc.sh start
 ```
->[TIP]
+>[!TIP]
 >Make sure to update your github action with the new runner!
