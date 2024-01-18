@@ -44,6 +44,11 @@ sudo reboot
 >[!CAUTION]
 >After logging in as `user` run every command in the `Download` section
 
+## Configuring The Runner
+
+>[!TIP]
+>Run the first command in the configure section
+
 - For name of the runner group, hit Enter so `Default` is used
 
 - For name of the runner, use the following template: `gh-runner-(type)-(service)-(number)`
@@ -52,14 +57,20 @@ sudo reboot
 
 - For name of the work folder, hit Enter so `_work` is used
 
-./run.sh - wait for the github runner to update
-ctrl+c
-sudo ./svc.sh install root
-sudo ./svc.sh start
+- Start the runner:
+```bash
+./run.sh 
+```
+- wait for the github runner to update
 
-Update Github Action
-Open up the CI/CD workflow file (.github/workflows/main.yml) 
-https://github.com/aimg1/aimg-backend/blob/main/.github/workflows/cicd-api.yml 
- Append the api-<server #> label that was used above to the list below
-Commit and push the change
-Done! Any deploy to prod will now be pushed to the new server as well
+- After it is updated press `ctrl+c`
+
+- Run these commands to run on boot:
+```bash
+sudo ./svc.sh install root
+```
+```bash
+sudo ./svc.sh start
+```
+>[TIP]
+>Make sure to update your github action with the new runner!
