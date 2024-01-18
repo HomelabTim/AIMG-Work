@@ -49,13 +49,13 @@ sudo reboot
 >[!TIP]
 >Run the first command in the configure section
 
-- For name of the runner group, hit Enter so `Default` is used
+- For name of the runner group, hit `Enter` so `Default` is used
 
 - For name of the runner, use the following template: `gh-runner-(type)-(service)-(number)`
 
 - For additional labels, enter: `staging` or `production`,`server(number)`
 
-- For name of the work folder, hit Enter so `_work` is used
+- For name of the work folder, hit `Enter` so `_work` is used
 
 - Start the runner:
 ```bash
