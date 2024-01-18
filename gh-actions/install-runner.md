@@ -13,13 +13,13 @@ sudo nano /etc/network/interfaces
 >type = [Stage,Prod]
 >service = [APISever,BlazorServer]
 >number = [1,2,3]
->example = Stage-BlazorServer-1
 
 ```bash
-sudo hostnamectl set-hostname type-service-number
+sudo hostnamectl set-hostname type-service-number #ex. Stage-BlazorServer-1
 ```
+```bash
 sudo nano /etc/hosts
-
+```
 - reboot the server to see changes
 ```bash
 sudo reboot
