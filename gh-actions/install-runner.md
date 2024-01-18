@@ -15,7 +15,7 @@ sudo nano /etc/network/interfaces
 >number = [1,2,3]
 
 ```bash
-sudo hostnamectl set-hostname type-service-number #ex. Stage-BlazorServer-1
+sudo hostnamectl set-hostname (type)-(service)-(number) #ex. Stage-BlazorServer-1
 ```
 ```bash
 sudo nano /etc/hosts
@@ -25,25 +25,32 @@ sudo nano /etc/hosts
 sudo reboot
 ```
 
-## API Github Runner Installation
+## Github Runner Installation
 
-Go to: https://github.com/aimg1/aimg-backend/settings/actions/runners  
-Click the green ‘New self-hosted runner’ button
-Click ‘Linux’
+- Go to: `Repo > Settings > Actions > Runners` in GitHub  
 
-VM
-Login as ‘user’ if not already
-Cd
-cd ./actions-runner
-Back on github, run the ./config.sh command under ‘Configure’
+- Click the green `New self-hosted runner` button
 
-For name of the runner group, hit Enter so ‘Default’ is used
-For name of the runner, use the following template:gh-runner-<staging/prod>-api-<server #>
+![Step1](gh-actions/img/pic.png)
 
-For additional labels, enter: aimg-backend,<staging/production>,api-<server # used above>
-API Ex: 
+- Click `Linux`
 
-For name of the work folder, hit Enter so ‘_work’ is used
+![Step2](gh-actions/img/pic2.png)
+
+- Go to the VM
+
+- Login as `user` if not already
+
+>[!CAUTION]
+>After logging in as `user` run every command in the `Download` section
+
+- For name of the runner group, hit Enter so `Default` is used
+
+- For name of the runner, use the following template: `gh-runner-(type)-(service)-(number)`
+
+- For additional labels, enter: `staging` or `production`,`server(number)`
+
+- For name of the work folder, hit Enter so `_work` is used
 
 ./run.sh - wait for the github runner to update
 ctrl+c
