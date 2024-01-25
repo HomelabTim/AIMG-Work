@@ -157,7 +157,7 @@ site_component {
       }
     }
     unsafe_logo_image {
-      resource_id: "1MzZJBKvR5Dth2y_yPK8r457rFkLI9AwaM6SFKW9EEGAxf4alag"
+      resource_id: "1OQOi1MRTmjRXV2wmjCrYhga1Ln8ZXMR8s5xc78JWZQtaqSl0KQ"
     }
   }
 }
